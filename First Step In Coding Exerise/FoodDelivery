@@ -1,0 +1,38 @@
+// The restaurant opens its doors and offers several menus at preferential prices: 
+// • Chicken menu – 10.35 BGN 
+// • Menu with fish – 12.40 BGN 
+// • Vegetarian menu – 8.15 BGN 
+// Write a program that calculates how much it will cost a group of people to order takeaways.
+// The group will also order a dessert, the price of which is equal to 20% of the total bill (excluding delivery). 
+// The delivery price is 2.50 BGN and is finally charged. 
+
+// Input:
+// From the console read 3 lines:
+// • Number of chicken menus – an integer in the range [0 ... 99]
+// • Number of menus with fish – an integer in the the range [0 ... 99]
+// • Number of vegetarian menus – an integer in the range [0 ... 99]
+
+// Output:
+// Print one line on the console: "{order price}"
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace FoodDelivery
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        { 
+            int chickenMenus = int.Parse(Console.ReadLine());
+            int fishMenus = int.Parse(Console.ReadLine());
+            int veganMenus = int.Parse(Console.ReadLine());
+            double chickenMenusPrice = chickenMenus * 10.35;
+            double fishMenusPrice = fishMenus * 12.40;
+            double veganMenusPrice = veganMenus * 8.15;
+            double dessertPrice = (chickenMenusPrice + fishMenusPrice + veganMenusPrice) * 20 / 100;
+            double finalPrice = chickenMenusPrice + fishMenusPrice + veganMenusPrice + dessertPrice + 2.50;
+            Console.WriteLine(Math.Round(finalPrice,2));
+        } 
+    }
+}
