@@ -1,0 +1,80 @@
+# A young programmer has a certain budget and free time in a given season. Write a program that accepts the budget and the season at the entrance,
+# and at the exit to earn where the programmer will rest and how much he will spend.nThe budget determines the destination, and the season
+# - how much of the budget will spend. If it is summer he will rest at the campsite and in the winter at a hotel. 
+# If he is in Europe, regardless of the season, he will stay in a hotel. Each campsite or hotel, according to the destination, has 
+# its own price, which corresponds to a certain percentage of the budget:
+# ⦁ At BGN 100 or less - somewhere in Bulgaria:
+# ⦁ Summer - 30% of the budget;
+# ⦁ Winter - 70% of the budget.
+# ⦁ At BGN 1,000 or less - somewhere in the Balkans:
+# ⦁ Summer - 40% of the budget;
+# ⦁ Winter - 80% of the budget.
+# ⦁ For more than BGN 1,000 - somewhere in Europe:
+# ⦁ When traveling in Europe, regardless of the season, you will spend 90% of the budget.
+
+# Entrance
+# The input is readable by the console and consists of two lines entered by the user:
+# ⦁ Budget - real number;
+# ⦁ One of the two possible seasons - "summer" or "winter".
+
+# Exit
+# Two lines must be printed on the console:
+# ⦁ "Somewhere in" between "Bulgaria", "Balkans" and "Europe"
+# ⦁ "{Type of holiday} - {Amount spent}":
+# ⦁ Holidays can be between "Camp" and "Hotel"
+# ⦁ The amount must be formatted to the second decimal place
+
+# Input 
+# 50
+# summer
+
+using System;
+namespace Jorney
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            string destination = "";
+            string where = "";
+            if (budget <= 100)
+            {
+                destination = "Bulgaria";
+                switch (season)
+                {
+                    case "summer": budget = budget * 30 / 100; where = "Camp";  break;
+                    case "winter": budget *= 0.70; where = "Hotel"; break;
+                    default: break;
+                }
+
+            }
+            else if (budget > 100 && budget <= 1000)
+            {
+                destination = "Balkans";
+                switch (season)
+                {
+                    case "summer": budget *= 0.4; where = "Camp";  break;
+                    case "winter": budget *= 0.8; where = "Hotel";  break;
+                    default: break;
+                }
+
+            }
+            else if (budget > 1000)
+            {
+                destination = "Europe";
+
+                budget *= 0.9; where = "Hotel";
+
+            }
+            else
+            {
+
+            }
+            Console.WriteLine($"Somewhere in {destination}");
+            Console.WriteLine($"{where} - {budget:f2}");
+
+        }
+    }
+}
