@@ -1,0 +1,58 @@
+// Write a program that reads integers from the console until a "stop" command is received. Find the sum of all entered primes and the sum of all
+// entered primes. Since, by definition in mathematics, negative numbers cannot be prime, if a negative number is input, the following message
+// "Number is negative." In this case, the entered number is ignored and is not added to either of the two amounts, and the program continues its execution,
+// waiting for the next number to be entered.
+// At the output to print in two lines the two amounts found in the following format:
+//  "Sum of all prime numbers is: {prime numbers sum}"
+// ⦁ "Sum of all non prime numbers is: {nonprime numbers sum}"
+
+using System;
+namespace SumPrimeNotPrime
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {   double primeNumberSum = 0;
+            double nonPrimeNumberSum = 0;
+            while (true)
+            {
+                string command = (Console.ReadLine()); 
+
+                if (command == "stop")
+                {
+                    break;
+                }
+                double number = double.Parse (command);
+                if (number < 0)
+                {
+                    Console.WriteLine("Number is negative.");
+                }
+                else
+                {
+                    bool isTheNumberPrime = true;
+                    for (int i = 2; i < number; i++)
+                    {
+
+                        if (number % i == 00)
+                        {
+                            isTheNumberPrime = false;
+                            break;
+                        }
+
+                    }
+                    if (isTheNumberPrime)
+                    {
+                        primeNumberSum += number;
+                    }
+                    else
+                    {
+                        nonPrimeNumberSum += number;
+                    }
+                }
+            }
+            Console.WriteLine($"Sum of all prime numbers is: {primeNumberSum}");
+            Console.WriteLine($"Sum of all non prime numbers is: {nonPrimeNumberSum}");
+        }
+           
+    }
+}
