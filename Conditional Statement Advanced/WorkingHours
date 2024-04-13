@@ -1,0 +1,34 @@
+// Create a program that reads the hour of the day (integer) and the day of the week (text) - entered by the user and checks whether the office of the company is open,
+// the working hours of the office are from 10-18 hours, Monday to Saturday inclusive
+
+// input    output         input    output
+// 11       open           19       closed
+// Monday                  Fryday
+
+using System;
+namespace WorkingHours
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+          int hour = int.Parse(Console.ReadLine());
+            string day = Console.ReadLine(); 
+
+          if (day == "Monday" || day == "Tuesday" || day == "Wednesday" || day == "Thursday"
+                || day == "Friday" || day == "Saturday")
+            {
+                if (hour >= 10 && hour <= 18)
+                    Console.WriteLine("open");
+                else
+                    Console.WriteLine("closed");
+            }
+          else
+            {
+                Console.WriteLine("closed");
+            }
+        }
+
+    }
+}
