@@ -1,0 +1,23 @@
+//Create program that calculate the money needed to buy cat and dog food. The food is bought from pet store.
+//One bag of dog food is 2.50 lv. and one bag of cat food is 4 lv.
+//Input:
+//1.	Bags of dog food – whole number in range [0…100]
+//2.	Bags of cat food – whole number in range [0…100]
+//Output:
+//“{Final price} lv.”
+
+namespace PetShop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int bagsOfDogFood = int.Parse(Console.ReadLine());
+            int bagsOfCatFood = int.Parse(Console.ReadLine());
+            double dogFoodPrice = bagsOfDogFood * 2.50;
+            double catFoodPrice = bagsOfCatFood * 4;
+            double finalPrice =  dogFoodPrice + catFoodPrice;
+            Console.WriteLine(finalPrice + " " + "lv.");
+        }
+    }
+}
