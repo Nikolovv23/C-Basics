@@ -5,7 +5,7 @@ Create a program that prints the class of the animal according to its name enter
 
 
 using System;
-namespace AnimalClass
+namespace AnimalType
 {
     internal class Program
     {
