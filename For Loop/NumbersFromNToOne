@@ -1,0 +1,16 @@
+//Create program that reads number from console and prints all numbers from current to one. Each on new line.
+
+using System;
+namespace NumbersFromNToOne
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            for(int a = int.Parse(Console.ReadLine()) ; a >= 1; --a)
+            {
+                Console.WriteLine(a);
+            } 
+        }
+    }
+}
