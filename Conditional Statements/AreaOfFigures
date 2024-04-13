@@ -1,0 +1,54 @@
+//Create a program in which the user enters the type and dimensions of a geometric figure and calculates its face.
+//The figures are of four types: square, rectangle, circle and triangle. 
+//The first line of the input reads the type of the figure (text with the following possibilities: square, rectangle, circle or triangle). 
+//• If the figure is square: the next row reads a fractional number - length of its side
+//• If the figure is rectangle: the next two lines read two fractional numbers - the lengths of its sides
+//• If the figure is circle: the next line reads one fractional number - the radius of the circle
+//• If the figure is a triangle: the next two rows read two fractional numbers - the length of its side and the length of the height to it
+
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
+using System.Dynamic;
+using System.Threading.Channels;
+
+namespace AreaOfFigures
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string first = Console.ReadLine();
+            if (first == "square")
+            {
+                double a = double.Parse(Console.ReadLine());
+                double b = a * a;
+                Console.WriteLine(" {0:F3} ", b);
+            }
+            if (first == "rectangle")
+            {
+                double legth = double.Parse(Console.ReadLine());
+                double width = double.Parse(Console.ReadLine());
+                double area = legth * width;
+                Console.WriteLine(" {0:F3}", area);
+            }
+            if (first == "circle")
+            {
+                double radius = double.Parse(Console.ReadLine());
+                double area = Math.PI * radius * radius;
+                Console.WriteLine("{0:F3}", area);
+            }
+            if (first == "triangle")
+            { 
+                double height = double.Parse(Console.ReadLine());
+                double a = double.Parse(Console.ReadLine());
+                double area = height * a / 2;
+                Console.WriteLine("{0:F3}", area);
+            }
+             
+        }    
+    }
+}
+
+
