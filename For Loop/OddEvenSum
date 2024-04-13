@@ -1,0 +1,43 @@
+// Write a program that reads n-number integers submitted by the user and checks that the sum of the numbers of even positions is equal to the sum of the numbers
+// of odd positions.
+// ⦁ If the amounts are equal, print two lines: "Yes" and on a new line "Sum =" + the amount;
+// ⦁ If the amounts are not equal, print two lines: "No" and a new line "Diff =" + the difference.
+// The difference is calculated in absolute value.
+
+using System;
+
+namespace OddEvenSum
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            int sumEven = 0;
+            int sumOdd = 0;
+            for (int i = 1; i <= number; i++)
+                
+            {
+                int numbers = int.Parse((Console.ReadLine()));
+                if (i % 2 == 0)
+                {
+                    sumEven += numbers;
+                }
+                if (i % 2 != 0)
+                {
+                    sumOdd += numbers;
+                }
+            }
+            if (sumOdd== sumEven)
+            {
+                Console.WriteLine($"Yes");
+                Console.WriteLine($"Sum = {sumOdd}");
+            }
+            else
+            {
+                Console.WriteLine($"No");
+                Console.WriteLine($"Diff = {Math.Abs(sumOdd - sumEven)}");
+            }
+        }
+    }
+}
