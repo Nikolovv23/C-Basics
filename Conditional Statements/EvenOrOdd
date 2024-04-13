@@ -1,0 +1,24 @@
+// Write a program that reads an integer entered by the user and prints whether it is even or odd. 
+//If it's even, print "even", if it's odd, print "odd".
+
+using System;
+
+namespace EvenOrOdd
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine()); 
+           
+            if (number % 2 == 0 )
+            {
+                Console.WriteLine("even");
+            }
+            else
+            {
+                Console.WriteLine("odd");
+            }
+        }
+    }
+}
