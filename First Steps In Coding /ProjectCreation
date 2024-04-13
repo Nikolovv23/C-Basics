@@ -14,10 +14,10 @@ namespace ProjectCreation
         static void Main(string[] args)
         {
             string name = Console.ReadLine();
-            int a = 3;
-            int b = int.Parse(Console.ReadLine());
-            int sum = a * b;
-            Console.WriteLine($"The architect {name} will need {sum} hours to complete {b} project/s.");
+            int timeForOneProject = 3;
+            int projectCount = int.Parse(Console.ReadLine());
+            int neededTime = timeForOneProject * projectCount;
+            Console.WriteLine($"The architect {name} will need {neededTime} hours to complete {projectCount} project/s.");
         }
     }
 }
