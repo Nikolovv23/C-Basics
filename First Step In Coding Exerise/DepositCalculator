@@ -1,0 +1,25 @@
+//Create program that calculate sum in the end of deposit period. Use the following formula:
+//Sum = deposit amount + term of deposit * ((deposit amount * annual interest rate) / 12)
+//Input:
+//1.	Deposit amount – real number in range [100.00 … 10000.00]
+//2.	Term of deposit – whole number in range [1…12]
+//3.	Annual interest rate - real number in range [100.00 … 10000.00]
+//Output: Write final sum rounded to the second decimal place
+
+
+using System;
+
+namespace DepositCalculator
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+             double deposit = double.Parse(Console.ReadLine());
+             int time = int.Parse(Console.ReadLine());
+             double percent = double.Parse(Console.ReadLine());
+             double sum = deposit + time * (deposit * (percent / 100) / 12);
+             Console.WriteLine(Math.Round(sum,2));
+        }
+    }
+}
