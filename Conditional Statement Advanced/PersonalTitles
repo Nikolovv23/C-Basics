@@ -1,0 +1,44 @@
+// Create a program that reads an age (real number) and gender ('m' or 'f') entered by the user and prints a reference among the following:
+// • "Mr." — male (sex 'm') 16 years of age or older
+// • "Master" - boy (sex 'm') under 16 years
+// • "Ms." — woman (sex 'f') 16 years old or older
+// • "Miss" – girl (gender 'f') under 16
+
+// input  output     input  output     input  output     input  output  
+// 12     Miss       17     Mr.        25     Ms.        13.5    Master
+// f                 m                 f                 m
+
+using System;
+namespace PersonalTitles
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double age = double.Parse(Console.ReadLine());
+            char gender = char.Parse(Console.ReadLine());
+            if (gender == 'f')
+            {
+                if (age >= 16)
+                {
+                    Console.WriteLine("Ms.");
+                }
+                else
+                {
+                    Console.WriteLine("Miss");
+                }
+            }
+            else
+            {
+                if (age>= 16)
+                {
+                    Console.WriteLine("Mr.");
+                }
+                else
+                {
+                    Console.WriteLine("Master");
+                }
+            }
+        }
+    }
+}
