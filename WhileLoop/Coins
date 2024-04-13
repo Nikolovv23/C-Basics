@@ -1,0 +1,54 @@
+// Vending machine manufacturers wanted to make their machines return as few change coins as possible. 
+// Write a program that accepts an amount - the rest that needs to be returned and calculates with as few coins as possible.
+
+using System;
+namespace Coins
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            decimal remainder = decimal.Parse(Console.ReadLine());
+            int coinsCount = 0;
+            while (remainder > 0)
+          {
+                if (remainder >= 2m)
+                {
+                    remainder -= 2m;
+                }
+                else if (remainder >= 1m)
+                {
+                    remainder -= 1m;
+                }
+                else if (remainder >= 0.50m)
+                {
+                    remainder -= 0.50m;
+                }
+                else if (remainder >= 0.20m)
+                {
+                    remainder -= 0.20m;
+                }
+                else if (remainder >= 0.10m)
+                {
+                    remainder -= 0.10m;
+                }
+                else if (remainder >= 0.05m)
+                {
+                    remainder -= 0.05m;
+                }
+                else if (remainder >= 0.02m)
+                {
+                    remainder -= 0.02m;
+                }
+                else if (remainder >= 0.01m)
+                {
+                    remainder -= 0.01m;
+                }
+                else { }
+
+                coinsCount++;
+          }
+            Console.WriteLine(coinsCount);
+        }
+    }
+}
