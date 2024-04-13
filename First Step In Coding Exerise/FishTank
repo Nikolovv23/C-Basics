@@ -1,0 +1,36 @@
+//For his birthday, Lyubomir received an aquarium in the shape of a parallelepiped. 
+//Initially, we read from the console in separate rows its dimensions – length,
+//width and height in centimeters. It should be calculated how many liters of water
+//the aquarium will collect, if it is known that a certain percentage of its capacity 
+//is occupied by sand, plants, heater and pump.
+//
+//One liter of water is equal to one cubic decimeter / 1l = 1 dm3 /. 
+//Write a program that calculates the liters of water that are needed to fill the aquarium.
+
+// Input:  Output:	    Explanations:
+// 85     248.68875     aquarium volume: 85 * 75 * 47 = 299625 cm3
+// 75                   Volume in liters: 299625 * 0.001 or 299625 / 1000 => 299.625 liters
+// 47                   Occupied space: 17 % = 0.17
+// 17	 	                Required liters: 299.625 * (1 - 0.17) = 248.68875 liters    
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Dynamic;
+
+namespace FishTank
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double lenth = double.Parse(Console.ReadLine());
+            double width = double.Parse(Console.ReadLine());
+            int height = int.Parse(Console.ReadLine());
+            double persent = double.Parse(Console.ReadLine());
+            double volume = (lenth * width * height) / 1000;
+            double occupiedPart = (persent / 100) * volume;
+            double waterVolume = volume - occupiedPart;
+            Console.WriteLine(waterVolume);
+        }
+    }
+}
