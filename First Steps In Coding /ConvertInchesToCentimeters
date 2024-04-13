@@ -1,0 +1,17 @@
+//Write programs that read number in inches and convert it to centimeters (2.54 centimeters = 1 inch)
+
+using System;
+
+namespace InchesToCentimeters
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int inches = int.Parse(Console.ReadLine());
+            double centimeters = inches * 2.54;
+            Console.WriteLine(centimeters);
+        }
+    }
+}
+
