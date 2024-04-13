@@ -1,0 +1,24 @@
+// Joro has to read a certain number of books. Create program that calculate how many hours a day should he read to read the current book.
+// Input:
+// 1.Number of pages in current book – integer in range [1…1000]
+// 2.Number of pages that read for one hour – integer in range [1…1000]
+// 3.Number of days to read a book – integer in range [1…1000]
+// Output: Number of hours that Joro must read every day to read the current book.
+
+using System;
+
+namespace VacationBooksList
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        { 
+            int pages = int.Parse(Console.ReadLine());  
+            int PagesInOneDay = int.Parse(Console.ReadLine());
+            int days = int.Parse(Console.ReadLine());    
+            int HoursToReadInOneDay = pages/ PagesInOneDay / days;
+            Console.WriteLine(HoursToReadInOneDay);
+        }
+    }
+}
+
