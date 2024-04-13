@@ -1,0 +1,15 @@
+//Create program that calculates USD (read number from console) to BGN.
+using System;
+
+namespace USDtoBGN
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double dollars = double.Parse(Console.ReadLine());
+            double levas = dollars * 1.79549;
+            Console.WriteLine(levas);
+        }
+    }
+}
