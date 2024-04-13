@@ -1,0 +1,20 @@
+//A number is valid if it is in the range [100... 200] or is 0. Write a program that reads an integer entered by the user and prints "invalid" if the number entered is not valid.
+
+using System;
+namespace InvalidNumber
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double alfa = double.Parse(Console.ReadLine());
+
+            if (alfa == 0 || alfa <= 200 && alfa >= 100)
+            {
+                Console.WriteLine();
+            }
+          else { Console.WriteLine("invalid"); }
+            
+        }
+    }
+}
