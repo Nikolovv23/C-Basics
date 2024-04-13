@@ -1,0 +1,29 @@
+// Ani is a student and she must by some pens, markers and whiteboard creaner. She will buy all things from the bookstore, where she has discount.
+//A packet of pens cost 5.80 lv, a packet of markers cost 7.20 lv. and the cleaner  cost  1.20 lv. for one liter. Create  progarm  that  calculate
+//final price that Ani must pay for her purchases.
+// Input(4 numbers):
+// 1.Number of packets of pens – integer in range [0…100]
+// 2.Number of packets of markers – integer in range [0…100]
+// 3.WhiteBoard cleaner in liters - integer in range [0…50]
+// 4.Percentage discout - integer in range[0…100]
+// Output: Print the final price that Ani must pay for her purchases.
+
+using System;
+
+namespace SuppliesForSchool
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        { 
+            int pencils = int.Parse(Console.ReadLine());  
+            int markers = int.Parse(Console.ReadLine());
+            int whiteBoardCleaner = int.Parse(Console.ReadLine());    
+            int persentsOff = int.Parse(Console.ReadLine());
+            double price = (pencils * 5.80) + (markers * 7.20) + (whiteBoardCleaner * 1.20);
+            double finalPrice = sum - (price * persentsOff / 100);
+            Console.WriteLine(finalPrice);
+
+        }
+    }
+}
