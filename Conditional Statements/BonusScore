@@ -1,0 +1,49 @@
+//An integer is given – the initial number of points. Bonus points are accrued on it according to the rules described below. 
+//Write a program that calculates the bonus points that the number receives and the total number of points (the number + bonus).
+//• If the number is up to 100 inclusive, the bonus points are 5.
+//• If the number is greater than 100, the bonus points are 20% of the number.
+//• If the number is greater than 1000, the bonus points are 10% of the number.
+//• Additional bonus points (accruing separately from the previous ones):
+//o For an even number  + 1 point.
+//o For a number that ends in 5 + 2 points.
+
+
+//input output    input output    input output 
+//20    6         175   27        2703  270.3
+//      26              212             2973.3
+
+
+using System;
+namespace BonusScore
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            double bonusPoints = 0;
+            if (number <= 100) 
+            {
+                bonusPoints = 5;
+            }
+            if (number > 100 && number <= 1000) 
+            {
+                bonusPoints = number * 0.2;  // 20% 
+            }
+            if (number > 1000 )
+            {
+                bonusPoints = number * 0.1; // 10%
+            }
+            if (number % 2 == 0)
+            {
+                bonusPoints ++;
+            }
+            if (number % 10 ==5)
+            {
+                bonusPoints += 2;
+            }
+            Console.WriteLine(bonusPoints);
+            Console.WriteLine(number + bonusPoints); 
+        }
+    }
+}
