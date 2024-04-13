@@ -1,0 +1,39 @@
+//Three athletes finish in a number of seconds (between 1 and 50). Write a program that reads the competitors' times in seconds entered 
+//by the user and calculates their total time in the format "minutes: seconds". 
+//Seconds to be output with a leading zero (2 -> "02", 7 -> "07", 35 -> "35"). 
+
+//input 	output		input  	output	
+//35      2:04      50      2.29
+//45                50
+//44	    		      49
+
+
+using System;
+using System.Security.Cryptography;
+
+namespace SumSeconds
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {    //input
+           int firstCompetitorTime = int.Parse(Console.ReadLine());
+           int secondCompetitorTime = int.Parse(Console.ReadLine());
+           int thirdCompetitorTimer = int.Parse(Console.ReadLine());
+             
+             // calculation
+           int  totalTime = firstCompetitorTime + secondCompetitorTime + thirdCompetitorTimer;
+           int timeInMinutes = totalTime / 60;
+           int leftSeconds = totalTime - timeInMinutes * 60 ;
+             // output
+            if (leftSeconds < 10)
+            {
+                Console.WriteLine($"{timeInMinutes}:0{leftSeconds}");
+            }
+            else
+            {
+                Console.WriteLine($"{timeInMinutes}:{leftSeconds}");
+            }
+        }
+    }
+}
