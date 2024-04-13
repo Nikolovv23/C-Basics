@@ -1,0 +1,52 @@
+// Ivan decided to break the world record in long-distance swimming. On the console is entered the record in seconds that Ivan has to improve,
+// the distance in meters he has to swim and the time in seconds for which he swims a distance of 1 m. Write a program that calculates whether 
+// he has coped with the task, taking into account that: the resistance of the water slows it down every 15 meters by 12.5 seconds. When calculating 
+// how many times Ivancho will slow down as a result of the resistance of the water, the result should be rounded down to the nearest integer.
+// To calculate the time in seconds for which Ivan will swim the distance and difference from the World Record. 
+// Input - From the console read 3 lines:
+// 1.The record in seconds – a real number in the range [0.00 ... 100000.00]
+// 2.The distance in meters – a real number in the range [0.00 ... 100000.00]
+// 3.The time in seconds for which a distance of 1 m floats - a real number in the range [0.00 ... 1000.00]
+// Output:
+// • If Ivan has broken the World Record (his time is less than the record) we print:
+// o   " Yes, he succeeded! The new world record is (Ivan's time} seconds."
+// • If he has NOT improved the record (his time is greater than or equal to the record) we print:
+// o   "No, he failed! He was (short seconds} seconds slower."
+// The result must be formatted to two decimal places.
+// 
+// Examples:
+// Input Output                                                     input       output
+// 10464  No, he failed! He was 20786.00 seconds slower.             55555.67    Yes, he succeeded! The new world record is 17688.01 seconds.
+// 1500                                                              3017
+// 20                                                                5.03
+       
+
+
+using System;
+
+namespace WorldSwimmingRecord
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double record = double.Parse(Console.ReadLine());
+            double distance = double.Parse(Console.ReadLine());
+            double timeForOneMeter = double.Parse(Console.ReadLine());
+            double currentTime = distance * timeForOneMeter;
+            double addTime = Math.Floor(distance / 15) * 12.5;
+
+            double totalTime = currentTime + addTime;
+            if (totalTime < record)
+            {
+                Console.WriteLine($"Yes, he succeeded! The new world record is {totalTime:f2} seconds.");
+            }
+            else
+            {
+                Console.WriteLine($"No, he failed! He was {totalTime - record:f2} seconds slower.");
+            }
+        }
+    }
+}
+
