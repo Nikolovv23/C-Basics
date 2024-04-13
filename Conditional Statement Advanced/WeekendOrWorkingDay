@@ -1,5 +1,5 @@
-Create a program that, reads a day of the week (text) - entered by the user.If the day is working prints on the console - "Working day",
-if it is a holiday - "Weekend". If you enter text other than a day of the week to print - "Error".
+// Create a program that, reads a day of the week (text) - entered by the user.If the day is working prints on the console - "Working day",
+// if it is a holiday - "Weekend". If you enter text other than a day of the week to print - "Error".
 
 using System;
 namespace WeekendOrWorkingDay
