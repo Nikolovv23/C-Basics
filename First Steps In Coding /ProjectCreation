@@ -1,0 +1,23 @@
+//Create program that calculate how much time does an architect need to create some construction project. Each //project takes 3 hours.
+//Input (2 lines):
+// 1.	The name of the architect 
+// 2.	Projects count - whole number in range [0…100] 
+//Output:
+//"The architect {name} will need {needed hours} hours to complete {projets count} project/s."
+
+using System;
+
+namespace ProjectCreation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            int a = 3;
+            int b = int.Parse(Console.ReadLine());
+            int sum = a * b;
+            Console.WriteLine($"The architect {name} will need {sum} hours to complete {b} project/s.");
+        }
+    }
+}
