@@ -1,0 +1,53 @@
+//During your lunch break, you want to watch an episode of your favorite series. Your task is to write a program with which you will find out if you have 
+//enough time to watch the episode. During the break, you set aside time for lunch and time for relaxation. The lunch time will be 1/8 of the rest time,
+//and the rest time will be 1/4 of the rest time. 
+//Input - From the console read 3 lines:
+//1.Series Name – Text
+//2. Episode duration – an integer in the range [10... 90]
+//3.Rest duration – an integer in the range [10... 120]
+//Output - Write one line on the console:
+//• If the time is enough to watch the episode: 
+//"You have enough time to watch and left with minutes free time."
+//• If your time is not enough:
+//"You don't have enough time to watch, you need more minutes."
+//Round the time to the nearest integer upwards.
+
+//Examples:
+//input output 
+//Game of Thrones        You have enough time to watch Game of Thrones and left with 0 minutes free time.
+//60
+//96
+
+//input                  output
+//Teen Wolf              You don't have enough time to watch Teen Wolf, you need 11 more minutes.
+//48
+//60
+
+using System;
+namespace LunchBreak
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            int time = int.Parse(Console.ReadLine());
+            int brake = int.Parse(Console.ReadLine());
+            double timeForLunch = brake / 8.00;
+            double timeForRecration = brake / 4.00;
+            double sumOfTime = timeForLunch + timeForRecration;
+           
+                ;
+            if (sumOfTime + time <= brake )
+            {
+                double a = brake - (sumOfTime + time);
+                Console.WriteLine($"You have enough time to watch {name} and left with {Math.Ceiling(a)} minutes free time.");
+            }
+            else
+            {
+                double b = (sumOfTime + time) - brake;
+                Console.WriteLine($"You don't have enough time to watch {name}, you need {Math.Ceiling(b)} more minutes.");
+            }
+        }
+    }
+}
