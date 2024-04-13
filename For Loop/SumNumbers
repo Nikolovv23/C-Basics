@@ -1,0 +1,25 @@
+// Write a program that reads n-number integers entered by the user and sums them.
+// ⦁ Enter the number of numbers n from the first line of the input.
+// ⦁ Enter an integer from the next n lines.
+// The program must read the numbers, sum them and print their sum.
+
+using System;
+namespace SumNumbers
+{ 
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            int sum = 0;
+            for (int i = 1; i <= number; i++)
+            {
+                int numbers = int.Parse(Console.ReadLine());
+                
+                sum += numbers;
+            }
+            Console.WriteLine(sum);
+        }
+        
+    }
+}
