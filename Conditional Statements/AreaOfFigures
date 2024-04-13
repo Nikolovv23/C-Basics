@@ -6,6 +6,12 @@
 //• If the figure is circle: the next line reads one fractional number - the radius of the circle
 //• If the figure is a triangle: the next two rows read two fractional numbers - the length of its side and the length of the height to it
 
+
+//input	     output		input	   output		input	output		input	  output
+//square     25.000	    rectangle  17.500       circle  113.097     triangle  45.000
+//5		                7                       6                   4.5
+//                      2.5                                         20
+
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
