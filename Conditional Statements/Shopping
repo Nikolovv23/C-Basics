@@ -1,0 +1,60 @@
+// Peter wants to buy N video cards, M processor and P number of ram memory. If the number of video cards is greater than that of the processors receives
+// a 15% discount on the final bill. The following prices apply:
+// • Video card – 250 lv/pcs.
+// • Processor – 35% of the price of the purchased video cards/pc.
+// • Ram memory – 10% of the price of the purchased video cards/pc.
+// Calculate the amount needed to purchase the materials and calculate whether the budget will be enough.
+// The input consists of four lines:
+// 1.Peter's budget - a real number in the range [0.0... 100000.0]
+// 2.The number of video cards - an integer in the range [0... 100]
+// 3.The number of processors - an integer in the range [0... 100]
+// 4.The number of ram memory - an integer in the range [0... 100]
+// Output:
+// 1 line is printed on the console, which should look like this:
+// • If the budget is sufficient:
+// "You have {left budget} leva left!"
+// • If the amount exceeds the budget:
+// "Not enough money! You need {required amount} leva more!"
+// 
+// Examples:
+// input    output                                 input output
+// 900      You have 198.75 leva left!             920.45    Not enough money! You need 3.92 leva more!
+// 2                                               3
+// 1                                               1
+// 3                                               1
+
+using System;
+using System.Reflection;
+
+namespace Shopping
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+         double budget = double.Parse(Console.ReadLine());
+         double graphicCard = double.Parse(Console.ReadLine());
+         double processor = double.Parse(Console.ReadLine());
+         double ram = double.Parse(Console.ReadLine());
+        
+            double sumForCard = graphicCard * 250;
+            double sumForProcessor = processor * 0.35 * sumForCard;
+            double sumForRam = ram * 0.1 * sumForCard;
+            double totalSum = sumForProcessor + sumForRam + sumForCard; 
+
+            if (graphicCard > processor)
+            {
+                totalSum *= 0.85;
+            }
+            if (budget >= totalSum)
+            {
+                Console.WriteLine($"You have {budget - totalSum:f2} leva left!");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! You need {totalSum - budget:f2} leva more!");
+            }
+
+        }
+    }
+}
