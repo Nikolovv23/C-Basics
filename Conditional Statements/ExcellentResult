@@ -1,0 +1,19 @@
+//Create program that reads a rating (fractional number) entered by the user and prints "Excellent!" if the rating is 5.50 or higher.
+
+using System;
+
+namespace ExcellentResult
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double rating = double.Parse(Console.ReadLine());
+            if (rating >= 5.50)
+            {
+                Console.WriteLine("Excellent!");
+            }
+            
+        }
+    }
+}
