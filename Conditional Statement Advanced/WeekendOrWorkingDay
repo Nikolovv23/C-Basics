@@ -1,0 +1,34 @@
+Create a program that, reads a day of the week (text) - entered by the user.If the day is working prints on the console - "Working day",
+if it is a holiday - "Weekend". If you enter text other than a day of the week to print - "Error".
+
+using System;
+namespace WeekendOrWorkingDay
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string day = Console.ReadLine();
+            switch (day)
+            {
+                case "Monday":
+                case "Tuesday":
+                case "Wednesday":
+                case "Thursday":
+                case "Friday":
+
+               Console.WriteLine("Working day");
+                    break;
+            
+                case "Saturday":
+                case "Sunday":
+                Console.WriteLine("Weekend");
+                    break;
+                    default: Console.WriteLine("Error");
+                    break;
+            }
+            
+        }
+
+    }
+}
