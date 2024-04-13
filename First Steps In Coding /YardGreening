@@ -18,8 +18,8 @@ namespace YardGreening
             double price = squareMeters * 7.61;
             double discount = 18 * price / 100;
             double finalPrice = price - discount;
-            Console.WriteLine($" The final price is: {finalPrice} lv.");
-            Console.WriteLine($" The discount is: {discount} lv.");
+            Console.WriteLine($" The final price is: {finalPrice:f2} lv.");
+            Console.WriteLine($" The discount is: {discount:f2} lv.");
 
         }
     }
