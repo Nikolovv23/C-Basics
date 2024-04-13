@@ -1,0 +1,28 @@
+// Write a program that reads an integer n entered by the user and prints a pyramid of numbers.
+
+using System;
+namespace NumberPyramid
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+              int number = int.Parse(Console.ReadLine());
+              int numbersToPrintForRow = 1;
+            for (int j = 0; j < number;) 
+            {
+                for (int i = 0; i < numbersToPrintForRow; i++)
+                {
+                    j++;
+                    Console.Write(j + " ");
+                    if ( j == number)
+                    {
+                        break;
+                    }
+                }
+                Console.WriteLine();
+                numbersToPrintForRow++;
+            } 
+        }      
+    }
+}
