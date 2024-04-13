@@ -1,0 +1,45 @@
+//Create a program that reads a speed (real number) entered by the user and prints out speed information. 
+//• At speeds up to 10 (inclusive) print "slow"
+//• At speeds above 10 and up to 50 (inclusive) print "average" 
+//• At speeds above 50 and up to 150 (inclusive) print "fast"
+//• At speeds above 150 and up to 1000 (inclusive) print "ultra fast" 
+//• At higher speeds, print "extremely fast"
+
+using System;
+using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
+using System.Dynamic;
+using System.Threading.Channels;
+
+namespace SpeedInfo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double a = double.Parse(Console.ReadLine());
+            if (a <= 10)
+            {
+                Console.WriteLine("slow"); 
+            }
+            else if ( a <= 50) 
+            {
+                Console.WriteLine("average");
+            }
+            else  if ( a <= 150 )
+            {
+                Console.WriteLine("fast");
+            }
+            else  if ( a <= 1000)
+            {
+                Console.WriteLine("ultra fast");
+            }
+            else
+            {
+                Console.WriteLine(" extremely fast");
+            }
+
+        }  
+    }
+}
+
