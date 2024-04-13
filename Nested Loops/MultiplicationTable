@@ -1,0 +1,22 @@
+// Print on the console the multiplication table for the numbers 1 to 10 in the format:
+// "{first multiplier} * {second multiplier} = {result}".
+
+
+using System;
+namespace MultiplicationTable
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int firstMultiplier = 1; firstMultiplier <= 10; firstMultiplier++)
+            {
+                for (int seconfMultiplier = 1; seconfMultiplier <= 10; seconfMultiplier++)
+                {
+                    int result = firstMultiplier * seconfMultiplier;
+                    Console.WriteLine($"{firstMultiplier} * {seconfMultiplier} = {result}");
+                }
+            }
+        }
+    }
+}
