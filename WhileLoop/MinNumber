@@ -1,0 +1,22 @@
+// Write a program that, before receiving the "Stop" command, reads integers entered by the user, finds at least one of them and prints it. Enter one number per line.
+
+using System;
+namespace MinNumber
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+          string input = Console.ReadLine();
+            double minNumber = double.MaxValue;
+
+            while (input != "Stop")
+            {
+             double number = double.Parse(input);
+              if (number < minNumber) { minNumber = number; }
+              input = Console.ReadLine();
+            }
+            Console.WriteLine(minNumber);
+        }
+    }
+}
