@@ -1,0 +1,52 @@
+//Filming for Godzilla vs. Kong has begun. Screenwriter Adam Wingard asks you to write a program to calculate whether the funds are enough to shoot the film. 
+//Photos will require a certain number of extras, clothing for each extraist and decor.
+//It is known that:
+//• The set for the film is worth 10% of the budget. 
+//• With more than 150 extras, there is a discount on clothing worth 10%.
+//Input - 3 lines:
+//Budget for the film – a real number in the range [1.00 ... 1000000.00]
+//Number of extras – integer in the range [1 ... 500]
+//Price for clothing of an extra – a real number in the range[1.00... 1000.00]
+//Output - Two lines should be printed on the console:
+//• If the money for the decor and clothes is more than budget:
+//o   "Not enough money!"
+//"Wingard needs leva more."
+//• If the money for the decor and clothes is less than or equal to the budget:
+//o   "Action!"
+//o "Wingard starts filming with {the rest of the money} leva left."
+//The result must be formatted to two decimal places.
+
+//Input 	Output                                                     Input      Output
+//20000   Action!                                                    9587.88    Not enough money!
+//120     Wingard starts filming with 11340.00 leva left.            222        Wingard needs 2495.77 leva more.
+//55.5                                                               55.68
+
+using System;
+namespace GodzillaVsKong
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+            int extras = int.Parse(Console.ReadLine());
+            double wearPrice = double.Parse(Console.ReadLine());
+            double allWearPrice = wearPrice * extras;
+            double sumForDecor = 0.1 * budget;
+            if (extras > 150)
+            {
+                allWearPrice *= 0.9;
+            }
+            if (allWearPrice + sumForDecor > budget)
+            {
+                Console.WriteLine("Not enough money!");
+                Console.WriteLine($"Wingard needs {(sumForDecor + allWearPrice) - budget:f2} leva more.");
+            }
+            else
+            {
+                Console.WriteLine("Action!");
+                Console.WriteLine($"Wingard starts filming with {budget - (allWearPrice + sumForDecor):f2} leva left.");
+            }
+        }
+    }
+}
