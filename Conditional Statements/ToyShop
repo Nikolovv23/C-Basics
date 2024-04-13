@@ -1,0 +1,63 @@
+// Petya has a children's toy store. She gets a big order that she has to fulfill. With the money he will win wants to go on a trip. 
+// Prices of toys:
+// • Puzzle - 2.60 lv.
+// • Talking doll - 3 BGN
+// • Teddy bear - 4.10 lv.
+// • Mignon - 8.20 lv.
+// • Truck - 2 BGN
+// If the ordered toys are 50 or more, the store makes a discount of 25% of the total price. Of the money earned, Petya must give 10% for the rent of the store.
+// Find out if the money will be enough to go on a trip.
+// Input- From the console read 6 lines:
+// 1.Price of the excursion - a real number in the range [1.00 ... 10000.00]
+// 2.Number of puzzles - an integer in the range [0... 1000]
+// 3.Number of talking dolls - an integer in the range [0 ... 1000]
+// 4.Number of teddy bears - an integer in the range [0 ... 1000]
+// 5.Number of minions - an integer in the range [0 ... 1000]
+// 6.Number of trucks - an integer in the range [0 ... 1000]
+// Output:
+// • If the money is sufficient, print:
+// o   "Yes! {leftMoney} lv left."
+// • If the money is NOT enough, it is printed:
+// o   "Not enough money! {neededMoney} lv needed."
+// 
+// Input	     Output     	           Explanations
+// 40.8       Yes! 418.20 lv left.    Amount: 20 * 2.60 + 25 * 3 + 30 * 4.10 + 50 * 8.20 + 10 * 2 = 680 lv.
+// 20                                 Number of toys: 20 + 25 + 30 + 50 + 10 = 135
+// 25                                 135 > 50 => 25 % discount; 25 % of 680 = 170 lv discount
+// 30                                 End price: 680 – 170 = 510 lv.
+// 50                                 Rent: 10 % from 510 lv = 51
+// 10                                   Profit: 510 – 51 = 459 lv
+//                                    459 > 40.8 => 459 – 40.8 = 418.20 lv left
+
+
+using System;
+namespace ToyShop
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double priceForTrip = double.Parse(Console.ReadLine());
+            int puzzels = int.Parse(Console.ReadLine());
+            int dolls = int.Parse(Console.ReadLine());
+            int teddyBears = int.Parse(Console.ReadLine()); 
+            int minions = int.Parse(Console.ReadLine());    
+            int trucks = int.Parse(Console.ReadLine());
+            double totalSumForToys = puzzels*2.60 + dolls*3 + teddyBears*4.10 + minions*8.20 + trucks*2; 
+            int numberOfToys = puzzels + dolls + teddyBears + minions + trucks;
+            if (numberOfToys >= 50)
+            {
+                totalSumForToys *= 0.75;
+            }
+            totalSumForToys *= 0.9;
+            if (totalSumForToys >= priceForTrip)
+            {
+                Console.WriteLine($"Yes! {totalSumForToys - priceForTrip:f2} lv left.");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! {priceForTrip - totalSumForToys:f2} lv needed.");
+            }
+        }
+    }
+}
