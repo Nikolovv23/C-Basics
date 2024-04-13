@@ -1,0 +1,23 @@
+// Write a program that reads an integer from the console and integers on each line until their sum is greater than or equal to the original number. 
+// At the end of the reading, print the sum of the entered numbers.
+
+using System;
+namespace SumNumbers
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           int number = int.Parse(Console.ReadLine());
+
+            int sum = 0;
+
+            while (number > sum)
+            {
+                int addValue =int.Parse(Console.ReadLine());
+                sum += addValue;
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
