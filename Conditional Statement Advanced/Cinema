@@ -1,0 +1,45 @@
+//In a cinema hall, the chairs are arranged in a rectangular shape in the r row and c columns. There are three types of ticket screenings at different prices:
+//• Premiere – premiere screening, at a price of 12.00 leva.
+//• Normal – standard screening, at a price of 7.50 leva.
+//• Discount – screening for children, pupils and students at a reduced price of 5.00 BGN.
+//Write a program that reads a projection type (string), number of rows and number of columns in the hall (integers) entered by the user, and calculates the total 
+//ticket revenue at a full hall. Print the result in a format as in the examples below, with 2 decimal places.  
+
+//input	    output            	input	    output          	  input	    output
+//Premiere  1440.00 leva        Normal    2047.50 leva        Discount  1800.00 leva
+//10                            21                            12
+//12                            13                            30
+
+using System;
+namespace Cinema
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string projection = Console.ReadLine();
+            int row = int.Parse(Console.ReadLine());
+            int column = int.Parse(Console.ReadLine());
+
+            if (projection == "Premiere")
+            {
+                double sum = row * column * 12.00;
+                Console.WriteLine("{0:F2} leva", sum);
+            }
+            else if (projection == "Normal")
+            {
+                double sum = column * row * 7.50;
+                Console.WriteLine("{0:F2} leva", sum);
+            }
+            else if (projection == "Discount")
+            {
+                double sum = row * column * 5.00;
+                Console.WriteLine("{0:F2} leva", sum);
+            }
+            else
+            {
+
+            }
+        }
+    }
+}
