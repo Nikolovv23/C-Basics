@@ -1,0 +1,35 @@
+//Write a program that reads an hour and minutes of a 24-hour day, entered by the user and calculates how many hours will be after 15 minutes.
+//Print the result in hours:minutes format. Hours are always between 0 and 23, and minutes are always between 0 and 59. Hours are written in one or two digits.
+//Minutes are always written with two digits, with a leading zero when necessary. 
+
+
+using System;
+
+namespace TimeAfter15Minutes
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int hour = int.Parse(Console.ReadLine());
+           int minutes= int.Parse(Console.ReadLine()) + 15;
+             if (minutes >= 60)
+            {
+                minutes -= 60;
+                hour++;
+            }
+             if (hour == 24)
+            {
+                hour -= 24;
+            }
+            if (minutes < 10)
+            {
+                Console.WriteLine($"{hour}:0{minutes}");
+            }
+            else
+            {
+                Console.WriteLine($"{hour}:{minutes}");
+            }
+        }
+    }
+}
