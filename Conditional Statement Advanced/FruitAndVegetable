@@ -1,0 +1,39 @@
+// Write a program that reads a product name entered by the user and checks whether it is a fruit or vegetable.
+// • "fruit" fruits have the following possible values: banana, apple, kiwi, cherry, lemon and grapes
+// • "vegetable" vegetables have the following possible values: tomato, cucumber, pepper and carrot
+// • Everyone else is "unknown"
+// Output "fruit", "vegetable" or "unknown" according to the product introduced.
+
+// input  output |  input   output | input    output    | input  output    
+// banana	fruit	 |  apple	  fruit	 | tomato	  vegetable	|	water	 unknown
+
+using System;
+namespace FruitAndVegetable
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string alfa = Console.ReadLine();
+            switch (alfa)
+            {
+                case "banana":
+                case "apple":
+                case "kiwi":
+                case "cherry":
+                case "lemon":
+                case "grapes":
+                    Console.WriteLine("fruit");
+                    break;
+                case "tomato":
+                case "cucumber":
+                case "pepper":
+                case "carrot":
+                    Console.WriteLine("vegetable");
+                    break;
+                default: Console.WriteLine("unknown");
+                    break;
+            }
+        }
+    }
+}
