@@ -1,0 +1,26 @@
+//Ivan has some house. He want to landscaped the yards of any of them. For this reason he is hiring a company.
+//Write program that calculate the required price must to pay to complete the project. Price for one square meter is 7.61 lv. But company offers 18% discount from final price.
+//Input:
+//1.	Square meters – real number in range [0.00 .. 10000.00]
+//Output:
+//"The final price is: {finalPrice} lv."
+//"The discount is: {discount} lv."
+
+using System;
+
+namespace YardGreening
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double squareMeters = double.Parse(Console.ReadLine());
+            double price = squareMeters * 7.61;
+            double discount = 18 * price / 100;
+            double finalPrice = price - discount;
+            Console.WriteLine($" The final price is: {finalPrice} lv.");
+            Console.WriteLine($" The discount is: {discount} lv.");
+
+        }
+    }
+}
