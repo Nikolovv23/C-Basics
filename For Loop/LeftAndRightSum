@@ -1,0 +1,37 @@
+// Write a program that reads 2 * n numbers of integers submitted by the user and checks if the sum of the first n numbers (left sum) is equal 
+// to the sum of the second n numbers (right sum). In case of equality, print "Yes, sum =" + the amount; otherwise print "No, diff =" + the difference. 
+// The difference is calculated as a positive number (in absolute value).
+
+
+using System;
+namespace LeftAndRightSum
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            int sumLeft = 0;
+            int sumRight = 0;
+            for (int i = 1; i <= number; i++)
+            {
+                int left = int.Parse(Console.ReadLine());
+                sumLeft += left;
+            }
+            for (int i = 1; i <= number; i++)
+            {
+                int right = int.Parse(Console.ReadLine());
+                sumRight += right;
+            }
+            
+            if (sumLeft == sumRight)
+            {
+                Console.WriteLine($"Yes, sum = {sumRight}");
+            }
+            else
+            {
+                Console.WriteLine($"No, diff = {Math.Abs(sumRight -  sumLeft)}"); 
+            }
+        }
+    }
+}
