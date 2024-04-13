@@ -1,0 +1,36 @@
+// Jesse decides he wants to play basketball, but he needs equipment to train.
+// Write a program that calculates what costs Jesse will have if he starts training, 
+// knowing how much is the fee for basketball training for a period of 1 year.
+//     Equipment needed: 
+// • Basketball sneakers – their price is 40% less than the fee for one year
+// • Basketball costume – its price is 20% cheaper than that of sneakers
+// • ball – its price is 1 / 4 of the price of the basketball costume
+// • Basketball accessories – their price is 1 / 5 of the price of the ball
+
+
+// input: output:   Explanations:
+// 365	  811.76 	Price of training per year: 365
+//                  Price of basketball sneakers: 365 – 40 % = 219
+//                  Price per basketball costume: 219 – 20 % = 175.20
+//                  Price of ball: 1 / 4 from 175.20 = 43.80
+//                  Price of basketball accessories: 1 / 5 from 43.80 = 8.76
+//                  Total price for the equipment: 365 + 219 + 175.20 + 43.80 + 8.76 = 811.76
+
+using System;
+
+namespace BasketballEquipment
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int fee = int.Parse(Console.ReadLine());
+            double shoesPrice = fee - (fee * 40 / 100);
+            double outfitPrice = shoesPrice - (shoesPrice * 20 / 100);
+            double bollPrice = outfitPrice / 4;
+            double accessoriesPrice = bollPrice / 5;
+            double totalPrice = fee + shoesPrice + outfitPrice + bollPrice + accessoriesPrice;
+            Console.WriteLine(Math.Round(totalPrice,2));
+        }
+    }
+}
